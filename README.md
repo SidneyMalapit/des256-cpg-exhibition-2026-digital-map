@@ -1,4 +1,4 @@
-# interactive web map for chicago printer's guild exhibition 2026
+# interactive web map for chicago printers guild exhibition 2026
 
 ## usage
 
