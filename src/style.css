@@ -56,3 +56,11 @@ MARK: Header
 #header #title {
     font-size: 28pt;
 }
+
+/*
+MARK: Map
+*/
+
+#map {
+    width: 100%;
+}
