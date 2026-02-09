@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "FuturaStd-Book";
+    src: url("/src/asset/otf/FuturaStd-Book.otf");
+}
+
+@font-face {
+    font-family: "FuturaStd-Medium";
+    src: url("/src/asset/otf/FuturaStd-Medium.otf");
+}
+
+@font-face {
+    font-family: "FuturaStd-ExtraBold";
+    src: url("/src/asset/otf/FuturaStd-ExtraBold.otf");
+}
+
+@font-face {
+    font-family: "CPGCooper";
+    src: url("/src/asset/otf/CooperBlackItalicSwashCustom.otf");
+}
+
+body {
+    font-family: "FuturaStd-Book", "Futura Std", "Futura", "Helvetica", "Arial", "Segoe UI", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+}
+
+.cooper {
+    font-family: "CPGCooper", sans-serif;
+}
+
+/* 
+MARK: Header
+*/
+
+#header {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 20pt;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#header * {
+    margin: 0;
+}
+
+#header #cpg-logo {
+    height: 60px;
+    fill: white;
+    margin-right: 25pt;
+}
+
+#header #title {
+    font-size: 28pt;
+}
