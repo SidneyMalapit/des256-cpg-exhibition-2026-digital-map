@@ -7,12 +7,41 @@
     <title>cpg-exhibition</title>
   </head>
   <body>
+    <!-- Header -->
     <div id="header">
       <img src="/src/asset/svg/cpg-logo.svg" id="cpg-logo"/>
       <h1 class="cooper" id="title">2026 Publishers Fair</h1>
     </div>
-    <img src="/src/asset/svg/Map-nohead.svg" id="map"/>
-    <div id="app"></div>
+
+    <!-- Map -->
+    <map name="cpg">
+      <area shape="circle" coords="0,0,2" href="https://github.com" target="_blank"/>
+
+      <area shape="circle" coords="262,369,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="240,439,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="263,439,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="237,530,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="259,521,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="237,607,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="261,596,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="503,311,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="501,666,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="744,606,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="722,593,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="725,523,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="748,522,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="743,438,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="719,436,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="727,369,5" target="_self" href="https://github.com" />
+      <area shape="circle" coords="744,355,5" target="_self" href="https://github.com" />
+    </map>
+    <img usemap="#cpg" src="/src/asset/svg/Map-nohead.svg" id="map"/>
+
+    <!-- JS -->
+    <script src="/src/lib/imageMapResizer.min.js" type="module" />
     <script type="module" src="/src/main.ts"></script>
+    <script type="module">
+      imageMapResize();
+    </script>
   </body>
 </html>
