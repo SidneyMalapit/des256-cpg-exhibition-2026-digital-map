@@ -60,6 +60,16 @@ MARK: Header
 }
 
 /*
+MARK: Infobox
+*/
+
+.infobox {
+    position: fixed;
+    padding: 10pt;
+    border: solid 1pt black;
+}
+
+/*
 MARK: Map
 */
 
