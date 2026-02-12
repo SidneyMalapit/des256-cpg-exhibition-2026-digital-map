@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/style.css" rel="stylesheet" />
-    
+
     <script type="module" src="/src/main.ts"></script>
     <script type="module">
-      import {InfoboxManager} from "/src/infobox-manager"
-      window.ibm = InfoboxManager.global; // this is for debugging REMOVE LATER!!!
+      import {show} from "/src/main";
+      window.showInfobox = show;
     </script>
     <title>cpg-exhibition</title>
   </head>
@@ -23,7 +23,7 @@
     <!-- Coords were generated @ https://tinyurl.com/4dchrn99 -->
     <map name="cpg">
       <!-- Orchid Line -->
-      <area shape="circle" coords="503,311,5" target="_self" href="" /> <!-- Orchid Line, top -->
+      <area shape="circle" coords="503,311,5" target="_self" href="javascript:showInfobox(1)" /> <!-- Orchid Line, top -->
       <area shape="circle" coords="501,666,5" target="_self" href="" /> <!-- Orchid Line, bottom-->
       <!-- Orchid Line, left (top to bottom)-->
       <area shape="circle" coords="240,439,5" target="_self" href="" />
@@ -51,9 +51,10 @@
     <img usemap="#cpg" src="/src/asset/svg/Map-nohead.svg" id="map"/>
 
     <!-- JS -->
-    <script src="/src/lib/imageMapResizer.min.js" type="module" />
     <script type="module">
-      imageMapResize();
+      // This sets up resizing.
+      import { factory } from "/src/lib/imr";
+      factory();  
     </script>
   </body>
 </html>

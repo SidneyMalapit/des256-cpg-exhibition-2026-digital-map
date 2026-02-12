@@ -44,7 +44,7 @@ export class Infobox {
         name.innerText = this._name;
         name.classList.add("cooper");
 
-        let handle = document.createElement("p");
+        let handle = document.createElement("a");
         handle.innerText = this._handle;
         if(this._handleHref != undefined) {
             handle.setAttribute("href", this._handleHref);
