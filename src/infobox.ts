@@ -1,6 +1,9 @@
 import { RGB } from "./colors";
 import { Region } from "./region";
 
+// Holds information about a vendor that is used to populate an infobox
+//
+// Also holds a preferred [region] which is used to position the infobox on the screen once it's displayed.
 export class Infobox {
     private _name: string
     private _handle: string
@@ -20,6 +23,17 @@ export class Infobox {
         this._color = color;
     }
 
+    // Constructs the infobox for display on the screen.
+    // Does not actually put the div into the DOM here.
+    //
+    // ------------------------------
+    // | [_name]                    |
+    // | [_handle]                  |
+    // |                            |
+    // |  [_description[0]]         |
+    // |  [_description[1]]         |
+    // |  [...]                     |
+    // ------------------------------
     public make(): HTMLDivElement {
         var container = document.createElement("div");
         container.classList.add("infobox");

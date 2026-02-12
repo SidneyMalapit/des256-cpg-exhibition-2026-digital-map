@@ -1,12 +1,17 @@
 import { Infobox } from "./infobox";
 import { Region } from "./region";
 
+// Manages infoboxes actually displayed on the screen
+//
+// Figures out the actual position based on the box's preferred region
+// Assigns the infobox an id once it's displayed which corresponds to a div in the DOM
 export class InfoboxManager {
     private static _global = new InfoboxManager();
     public static get global(): InfoboxManager { return InfoboxManager._global; }
 
-    private _displaying: Map<string, Infobox> = new Map()
+    private _displaying: Map<number, Infobox> = new Map()
 
+    // If a given Infobox is being displayed on the screen
     public has(ib: Infobox): boolean {
         for(var box of this._displaying.values()) {
             if(box === ib) {
@@ -16,7 +21,11 @@ export class InfoboxManager {
         return false
     }
 
-    public uidOf(ib: Infobox): string | null {
+    // Finds the assigned uid of an Infobox
+    //
+    // If it's not being displayed, returns null
+    // Otherwise, returns the uid.
+    public uidOf(ib: Infobox): number | null {
         for(var [k, v] of this._displaying.entries()) {
             if(v === ib) {
                 return k;
@@ -25,11 +34,21 @@ export class InfoboxManager {
         return null;
     }
 
+    // Finds the Infobox object given it's assigned uid.
+    //
+    // If it's not being displayed, returns null
+    // Otherwise, returns the Infobox
     public lookup(uid: number): Infobox | null {
-        if(!this._displaying.has("" + uid)) return null;
-        return this._displaying.get("" + uid)!
+        if(!this._displaying.has(uid)) return null;
+        return this._displaying.get(uid)!
     }
 
+    // Positions an infobox using it's assigned [region].
+    // The infobox must already be in the DOM.
+    //
+    // Takes in a uid which is assigned during [display()]
+    //
+    // [display()] calls this function automatically, you probably don't need to be calling this.
     public position(uid: number) {
         // Either use the provided uid or look it up based on the Infobox
         var infobox = this.lookup(uid);
@@ -80,30 +99,31 @@ export class InfoboxManager {
         document.getElementById("infobox-" + uid)!.setAttribute("style", "top:" + y + "px;left:" + x + "px;");
     }
 
+    // Displays an infobox in the DOM.
+    // 
+    // Assigns the infobox a uid which is used to identify it in the DOM.
+    // Calls the infobox's [make()] function and places the result in the DOM.
+    // Then calls [position()], passing in the uid.
     public display(ib: Infobox) {
         if(this.has(ib)) return; // prevent duplicates
 
         // Assign a random ID to the infobox so it doesn't get lost in the DOM.
-        let uid = (Math.random() * 1000000).toFixed(0);
-        this._displaying.set("" + uid, ib);
+        let uid = Math.floor(Math.random() * 1000000);
+        this._displaying.set(uid, ib);
 
         // Put the box in the DOM.
         let htmlElem = ib.make();
         htmlElem.id = "infobox-" + uid;
         document.body.appendChild(htmlElem);
+
+        // Position it on screen
+        this.position(uid);
     }
 
-    public teardown(ib: Infobox) {
-        for(var [k, v] of this._displaying.entries()) {
-            if(v === ib) {
-                let node = document.getElementById("infobox-" + k);
-                if(node != null) {
-                    document.body.removeChild(node);
-                }
+    public teardown(uid: number) {
+        if(!this._displaying.has(uid)) return;
 
-                this._displaying.delete(k);
-                break;
-            }
-        }
+        document.body.removeChild(document.getElementById("infobox-" + uid)!);
+        this._displaying.delete(uid);
     }
 }

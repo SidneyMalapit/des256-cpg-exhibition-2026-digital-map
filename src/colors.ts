@@ -10,6 +10,7 @@ export class RGB {
         this.verify();
     }
 
+    // Checks that the values are in the range [0, 255]
     public verify() {
         if(this._red < 0) {
             this._red = 0;
