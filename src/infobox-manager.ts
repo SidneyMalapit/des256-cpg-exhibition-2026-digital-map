@@ -1,5 +1,6 @@
 import { Infobox } from "./infobox";
 import { Region } from "./region";
+import { modifyStyleLine } from "./util";
 
 // Manages infoboxes actually displayed on the screen
 //
@@ -95,8 +96,12 @@ export class InfoboxManager {
                 y = Math.random() * (screenHeight - rect.height);
                 break;
         }
+
+        var oldLine = document.getElementById("infobox-" + uid)!.getAttribute("style");
+        var newStyleLine = modifyStyleLine(oldLine, "top", "" + Math.floor(y) + "px");
+        newStyleLine = modifyStyleLine(newStyleLine, "left", "" + Math.floor(x) + "px");
         
-        document.getElementById("infobox-" + uid)!.setAttribute("style", "top:" + y + "px;left:" + x + "px;");
+        document.getElementById("infobox-" + uid)!.setAttribute("style", newStyleLine);
     }
 
     // Displays an infobox in the DOM.

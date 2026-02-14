@@ -10,6 +10,7 @@ export class Infobox {
     private _handleHref: string | undefined;
     private _description: string[]
     private _color: RGB
+    public set color(value: RGB) { this._color = value; }
 
     // Box positioning, for use by [InfoboxManager]
     public region: Region = Region.top;
