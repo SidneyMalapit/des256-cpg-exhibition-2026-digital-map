@@ -9,19 +9,18 @@ export class Infobox {
     private _handle: string
     private _handleHref: string | undefined;
     private _description: string[]
-    private _color: RGB
-    public set color(value: RGB) { this._color = value; }
 
-    // Box positioning, for use by [InfoboxManager]
+    // Box positioning & rendering, for use by [InfoboxManager]
+    public color: RGB
     public region: Region = Region.top;
-    public anchor: [x: number, y: number] = [0, 0]
+    public anchorId: string | null = null;
 
     constructor(name: string, handle: string, handleHref: string | undefined, description: string[], color: RGB) {
         this._name = name;
         this._handle = handle;
         this._handleHref = handleHref;
         this._description = description;
-        this._color = color;
+        this.color = color;
     }
 
     // Constructs the infobox for display on the screen.
@@ -38,7 +37,7 @@ export class Infobox {
     public make(): HTMLDivElement {
         var container = document.createElement("div");
         container.classList.add("infobox");
-        container.style = "background-color: " + this._color.cssFormat();
+        container.style = "background-color: " + this.color.cssFormat();
 
         // ** Header
         let name = document.createElement("h1");

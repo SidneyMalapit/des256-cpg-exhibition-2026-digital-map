@@ -131,4 +131,99 @@ export class InfoboxManager {
         document.body.removeChild(document.getElementById("infobox-" + uid)!);
         this._displaying.delete(uid);
     }
+
+    public draw() {
+        if(this._displaying.size == 0) return; // nothing to draw.
+
+        let svg = document.getElementById("ib-paths") as SVGSVGElement | null;
+        if(svg == null) {
+            console.error("Cannot draw infobox tails, query for id:ib-paths was null.");
+            return;
+        }
+
+        svg.innerHTML = "";
+
+        let imgOffset = document.getElementById("map")!.getBoundingClientRect();
+        var imgOffsetY = imgOffset.y;
+        var imgOffsetX = imgOffset.x;
+
+        for(var [id, infobox] of this._displaying) {
+            let ibElem = document.getElementById("infobox-" + id);
+            if(ibElem == null) {
+                console.warn("Dom query for infobox id:" + id + " failed, InfoboxManager._displaying might be out of sync.");
+                continue;
+            }
+
+            if(infobox.anchorId == null) {
+                console.warn("Displayed infobox id:" + id + " has no anchor.");
+                continue;
+            }
+
+            let anchorElem = document.getElementById(infobox.anchorId);
+            if(anchorElem == null) {
+                console.error("infobox id:" + id + " specified anchor id:" + infobox.anchorId + " is not in the DOM.");
+                continue;
+            }
+
+            let coords = anchorElem.getAttribute("coords");
+            if(coords == null) {
+                console.error("anchor id:" + infobox.anchorId + " has no coords.");
+                continue;
+            }
+
+            let coordsArr = coords.split(",");
+            if(coordsArr.length < 2) {
+                console.error("anchor id:" + infobox.anchorId + " has invalid coords.");
+                continue;
+            }
+
+            let anchorX = Number.parseInt(coordsArr[0]);
+            let anchorY = Number.parseInt(coordsArr[1]);
+            if(Number.isNaN(anchorX) || Number.isNaN(anchorY)) {
+                console.error("anchor id:" + infobox.anchorId + " has invalid coords. (NaN)");
+                continue;
+            }
+
+            let anchorPt = svg.createSVGPoint();
+            anchorPt.x = anchorX + imgOffsetX;
+            anchorPt.y = anchorY + imgOffsetY;
+
+            let ibRect = ibElem.getBoundingClientRect();
+
+            switch(infobox.region) {
+                case Region.top:
+                    let maxX = ibRect.right;
+                    let minX = ibRect.left;
+                    let y = ibRect.height;
+
+                    let leftBound = minX + ((maxX - minX) / 2) - 30
+                    let rightBound = minX + ((maxX - minX) / 2) + 30
+
+                    let lbPt = svg.createSVGPoint()
+                    lbPt.x = leftBound;
+                    lbPt.y = y;
+
+                    let rbPt = svg.createSVGPoint()
+                    rbPt.x = rightBound;
+                    rbPt.y = y;
+
+                    let poly = document.createElementNS("http://www.w3.org/2000/svg", "polygon");
+                    poly.points.appendItem(anchorPt);
+                    poly.points.appendItem(lbPt);
+                    poly.points.appendItem(rbPt);
+                    
+                    poly.setAttribute("fill", infobox.color.cssFormat()); // cssFmt.cssFormat()
+
+                    svg.appendChild(poly);
+                    break;
+                case Region.bottom:
+                    // TODO: implement the rest of these cases.
+                    break;
+                case Region.left:
+                    break;
+                case Region.right:
+                    break;
+            }
+        }
+    }
 }
