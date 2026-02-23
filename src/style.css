@@ -42,7 +42,7 @@ MARK: Header
     flex-direction: row;
     align-items: center;
     width: 100%;
-    overflow: hidden;
+    overflow: visible;
     z-index: 0;
     position: sticky;
 }
@@ -91,15 +91,24 @@ MARK: Map
 */
 
 #map {
+  /*
     position:absolute;
     z-index: 0;
+    */
+}
+
+#map-container {
+    width: 100%;
+    overflow-x: scroll;
 }
 
 @media screen and (orientation: portrait) {
     #map {
+      /*
         width: auto;
         height: 100%;
         overflow-x: scroll;
+       */
     }
 }
 
