@@ -3,6 +3,17 @@ import { InfoboxDataset } from "./infobox-data";
 import { InfoboxManager } from "./infobox-manager";
 
 export function show(id: number, cpgColor: string, anchorId: string) {
+    // Check if the infobox is already showing based on the dataset ID
+    // If already showing an infobox, remove it.
+    let existingId = InfoboxDataset.global.getRelation(id);
+    if(existingId != undefined) {
+        InfoboxManager.global.teardown(existingId);
+        InfoboxDataset.global.removeRelation(id);
+        return;
+    }
+
+    // Else, show it.
+
     let fromDataset = InfoboxDataset.global.infobox(id);
     if(fromDataset == null) {
         console.error("Infobox with id:" + id + " doesn't exist in the dataset.");
@@ -27,8 +38,12 @@ export function show(id: number, cpgColor: string, anchorId: string) {
             break;
     }
 
-    InfoboxManager.global.display(fromDataset);
+    let uid = InfoboxManager.global.display(fromDataset);
     InfoboxManager.global.draw();
+
+    if(uid != null) {
+        InfoboxDataset.global.relate(id, uid);
+    }
 }
 
 window.onload = async () => {

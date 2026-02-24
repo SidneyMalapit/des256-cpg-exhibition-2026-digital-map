@@ -109,8 +109,10 @@ export class InfoboxManager {
     // Assigns the infobox a uid which is used to identify it in the DOM.
     // Calls the infobox's [make()] function and places the result in the DOM.
     // Then calls [position()], passing in the uid.
-    public display(ib: Infobox) {
-        if(this.has(ib)) return; // prevent duplicates
+    //
+    // Returns the ID of the newly-created box, otherwise null if no new box was created.
+    public display(ib: Infobox): number | null {
+        if(this.has(ib)) return null; // prevent duplicates
 
         // Assign a random ID to the infobox so it doesn't get lost in the DOM.
         let uid = Math.floor(Math.random() * 1000000);
@@ -123,6 +125,8 @@ export class InfoboxManager {
 
         // Position it on screen
         this.position(uid);
+
+        return uid;
     }
 
     public teardown(uid: number) {
@@ -130,11 +134,10 @@ export class InfoboxManager {
 
         document.body.removeChild(document.getElementById("infobox-" + uid)!);
         this._displaying.delete(uid);
+        this.draw()
     }
 
     public draw() {
-        if(this._displaying.size == 0) return; // nothing to draw.
-
         let svg = document.getElementById("ib-paths") as SVGSVGElement | null;
         if(svg == null) {
             console.error("Cannot draw infobox tails, query for id:ib-paths was null.");
@@ -142,6 +145,8 @@ export class InfoboxManager {
         }
 
         svg.innerHTML = "";
+
+        if(this._displaying.size == 0) return; // nothing to draw.
 
         let imgOffset = document.getElementById("map")!.getBoundingClientRect();
         var imgOffsetY = imgOffset.y;

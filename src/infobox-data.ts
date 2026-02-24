@@ -5,6 +5,7 @@ export class InfoboxDataset {
     public static global: InfoboxDataset = new InfoboxDataset()
 
     private _dataset: Map<number, {id: string, name: string, handle: string, handleHref: string | undefined, description: string[]}> = new Map();
+    private _relations: Map<number, number> = new Map() // {datasetId: managedId}
 
     public async fetchFromServer() {
         // Get the data from the server
@@ -32,4 +33,24 @@ export class InfoboxDataset {
 
         return new Infobox(data.name, data.handle, data.handleHref, data.description, CPGColor.orchid)
     }
-} 
+
+    // MARK: Dataset-Manager relations
+
+    public hasRelation(datasetId: number) {
+        return this._relations.has(datasetId);
+    }
+
+    public getRelation(datasetId: number): number | undefined {
+        return this._relations.get(datasetId);
+    }
+
+    public relate(datasetId: number, managedId: number): boolean {
+        if(this._relations.has(datasetId)) return false;
+        this._relations.set(datasetId, managedId);
+        return true;
+    }
+
+    public removeRelation(datasetId: number) {
+        this._relations.delete(datasetId);
+    }
+}
