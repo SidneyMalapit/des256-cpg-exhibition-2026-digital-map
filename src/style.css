@@ -69,7 +69,7 @@ MARK: Infobox
     position: fixed;
     padding: 10pt;
     border: solid 1pt black;
-    z-index: 3;
+    z-index: 5;
     max-width: 33%;
     min-width: 200px;
     max-height: 50%;
