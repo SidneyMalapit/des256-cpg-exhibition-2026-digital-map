@@ -1,111 +1,59 @@
 @font-face {
-    font-family: "FuturaStd-Book";
-    src: url("/src/asset/otf/FuturaStd-Book.otf");
+  font-family: "FuturaStd-Book";
+  src: url("/src/asset/otf/FuturaStd-Book.otf");
 }
 
 @font-face {
-    font-family: "FuturaStd-Medium";
-    src: url("/src/asset/otf/FuturaStd-Medium.otf");
+  font-family: "FuturaStd-Medium";
+  src: url("/src/asset/otf/FuturaStd-Medium.otf");
 }
 
 @font-face {
-    font-family: "FuturaStd-ExtraBold";
-    src: url("/src/asset/otf/FuturaStd-ExtraBold.otf");
+  font-family: "FuturaStd-ExtraBold";
+  src: url("/src/asset/otf/FuturaStd-ExtraBold.otf");
 }
 
 @font-face {
-    font-family: "CPGCooper";
-    src: url("/src/asset/otf/CooperBlackItalicSwashCustom.otf");
+  font-family: "CPGCooper";
+  src: url("/src/asset/otf/CooperBlackItalicSwashCustom.otf");
+}
+
+:root {
+  --sunflower: #f4b842;
+  --orchid: #a063ba;
+  --aqua: #79c6e2;
+  --charcoal: #72747c;
 }
 
 body {
-    font-family: "FuturaStd-Book", "Futura Std", "Futura", "Helvetica", "Arial", "Segoe UI", sans-serif;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
+  font-family: "FuturaStd-Book", "Futura Std", "Futura", "Helvetica", "Arial", "Segoe UI", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cooper {
-    font-family: "CPGCooper", sans-serif;
+  font-family: "CPGCooper", sans-serif;
 }
 
-/* 
-MARK: Header
-*/
+header.main-layout {
+  display: flex;
+  background-color: black;
+  padding: 1rem 1.5rem;
+  gap: 1.5rem;
 
-#header {
-    background-color: black;
-    color: white;
-    margin: 0;
-    padding: 20pt;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
-    z-index: 0;
-    position: sticky;
+  & > img { width: 1in; }
+  & > h1 { color: white; }
 }
 
-#header * {
-    margin: 0;
+#map-container {
+  flex: 1;
+  overflow-x: scroll;
 }
-
-#header #cpg-logo {
-    height: 60px;
-    fill: white;
-    margin-right: 25pt;
-}
-
-#header #title {
-    font-size: 28pt;
-}
-
-/*
-MARK: Infobox
-*/
-
-.infobox {
-    position: fixed;
-    padding: 10pt;
-    border: solid 1pt black;
-    z-index: 3;
-    max-width: 33%;
-    min-width: 200px;
-    max-height: 50%;
-    overflow: scroll;
-    color: white;
-}
-
-#ib-paths {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top:0;
-    pointer-events: none;
-    z-index: 4;
-}
-
-/*
-MARK: Map
-*/
 
 #map {
-    position:absolute;
-    z-index: 0;
-}
-
-@media screen and (orientation: portrait) {
-    #map {
-        width: auto;
-        height: 100%;
-        overflow-x: scroll;
-    }
-}
-
-@media screen and (orientation: landscape) {
-    #map {
-        width: 100%;
-        height: auto;
-    }
+  height: 100%;
 }
