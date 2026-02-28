@@ -60,6 +60,7 @@ header.main-layout {
 #map-container {
   flex: 1;
   overflow-x: scroll;
+  overflow-y: visible;
 
   & #click-map {
     position: relative;
@@ -85,26 +86,38 @@ header.main-layout {
 }
 
 article.info-box {
+  --left: 2rem;
+  --bottom: 2.5rem;
+
   background-color: var(--sunflower);
+  text-align: left;
   padding: 1rem;
   position: absolute;
-  left: 2rem;
-  top: 1rem;
+  left: var(--left);
+  bottom: var(--bottom);
   opacity: 0;
   visibility: hidden;
-  transition-property: opacity visibility;
+  transition-property: opacity, visibility;
   transition-duration: var(--trans-duration);
+  z-index: 100;
 
-  &:hover, .interactive:is(:hover, :active) > & {
+  &:hover, .interactive:is(:hover, :focus) > & {
     opacity: 1;
     visibility: visible;
   }
 
-  & span.vendor-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1ch;
-  }
+  .vendor-handle { opacity: 0.5; }
 
-  & p.vendor-description { text-align: left; }
+  .vendor-name, .vendor-handle { white-space: nowrap; }
+}
+
+.triangle {
+  position: absolute;
+  bottom: calc(var(--bottom) - 4rem);
+  left: calc(var(--left) - 3rem);
+  width: 2rem;
+  height: 2rem;
+  clip-path: polygon(50% 0%, 100% 0%, 0% 100%);
+  background: var(--sunflower);
+  transform: rotate(0deg);
 }
