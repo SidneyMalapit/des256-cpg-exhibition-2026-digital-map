@@ -117,7 +117,7 @@ article.info-box {
   transition-duration: var(--trans-duration);
   z-index: 100;
 
-  & > * { color: inherit; }
+  & > * { color: black; }
 
   &:hover, .interactive:is(:hover, :focus) > & {
     opacity: 1;
