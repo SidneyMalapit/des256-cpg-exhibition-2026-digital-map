@@ -3,7 +3,7 @@ interface VInfo {
   name: string;
   handle: string;
   link: string | undefined;
-  description: number;
+  description: string;
 }
 
 export default class VendorInfo implements VInfo {
@@ -11,7 +11,7 @@ export default class VendorInfo implements VInfo {
   public readonly name: string;
   public readonly handle: string;
   public readonly link: string | undefined;
-  public readonly description: number;
+  public readonly description: string;
 
   constructor(info: VInfo) {
     this.id = info.id;

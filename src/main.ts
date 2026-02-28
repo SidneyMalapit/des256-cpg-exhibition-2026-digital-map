@@ -1,17 +1,34 @@
 import positions from '../data/positions.json';
+import vendors from '../data/vendors.json';
 
 await new Promise((resolve) => addEventListener('DOMContentLoaded', resolve));
 
 const clickMap = document.getElementById('click-map') as HTMLElement;
+const infoTemplate = document.getElementById('info-box-template');
+
+if (!(infoTemplate instanceof HTMLTemplateElement)) { throw Error('info template not found'); }
 
 for (const id in positions as [number, number][]) {
   const [x, y] = positions[id];
   const button = document.createElement('button');
 
   button.classList.add('interactive');
-  button.id = `interactive-${id}`;
+  button.id = `interactive-${+id + 1}`;
   button.style.left = `${x / 980 * 100}%`;
   button.style.top = `${y / 934 * 100}%`;
 
   clickMap.append(button);
+
+  if (!vendors) { continue; }
+  const items = ['name', 'handle', 'description'];
+  const infoBox = infoTemplate.content.cloneNode(true) as DocumentFragment;
+
+  for (const item of items) {
+    const element = infoBox.querySelector(`.vendor-${item}`);
+    const vendor = vendors[id];
+    if (!element || !vendor) { continue; }
+    element.textContent = (vendors[id] as any)[item];
+  }
+
+  button.append(infoBox);
 }
