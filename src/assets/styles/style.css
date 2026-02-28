@@ -83,7 +83,7 @@ header.main-layout {
     counter-increment: count 1;
 
     /* debug counters */
-    /*
+    /**/
     &::before {
       position: absolute;
       font-weight: bold;
@@ -93,7 +93,7 @@ header.main-layout {
       color: black;
       content: counter(count, decimal);
     }
-    */
+    /**/
   }
 }
 
@@ -106,7 +106,6 @@ article.info-box {
   --bottom: 2.5rem;
 
   font-family: var(--font);
-  background-color: var(--sunflower);
   text-align: left;
   padding: 1rem;
   position: absolute;
@@ -143,6 +142,12 @@ article.info-box {
   width: 2rem;
   height: 2rem;
   clip-path: polygon(50% 0%, 100% 0%, 0% 100%);
-  background: var(--sunflower);
   transform: rotate(0deg);
 }
+
+.sunflower, .orchid, .aqua {
+  background-color: lch(from var(--bg) calc(l + 25) c h / 0.9);
+}
+.sunflower { --bg: var(--sunflower); }
+.orchid { --bg: var(--orchid); }
+.aqua { --bg: var(--aqua); }

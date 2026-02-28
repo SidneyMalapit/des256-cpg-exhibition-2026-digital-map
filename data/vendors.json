@@ -1,39 +1,146 @@
 [
   {
-    "id": 8,
-    "name": "cool press name",
-    "handle": "@coolpress",
-    "handleHref": "coolpress.co.uk",
-    "description": [
-      "blah blah",
-      "dhwaiuhiu",
-      "djwaiodjsahuiwdq"
-    ]
+    "id": 1,
+    "name": "Justseeds Artists Cooperative",
+    "handle": "Justseeds Artists Cooperative",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum",
+    "color": "orchid"
   },
   {
     "id": 2,
-    "name": "Justseeds Artists Cooperative",
-    "handle": "@jac",
-    "description": [
-      "djwaiodjsioajdiowa",
-      "jdiowqjeiojdklasmdklqw",
-      "djiwqojeoiqwjeioqjewiojdioajoidasoijdsaijo. wjadioqjeiojwqieojdsak. dwioqheuihhbghjesbfhjbsdhjfkdoqpwkdioasj"
-    ]
+    "name": "Hoofprint",
+    "handle": "Hoofprint",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
   },
   {
     "id": 3,
-    "name": "really really long long big long infobox",
-    "handle": "@mmmmmmmmmmmmmmmmmmmmmmmmmmmmmm",
-    "description": [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer condimentum eget turpis eleifend blandit. Nulla sodales nibh vitae nibh semper varius eu et eros. Nullam sit amet quam erat. Ut et sapien risus. Etiam sollicitudin pellentesque risus. Sed id iaculis urna. Integer ac neque eget magna mattis faucibus vitae a est. Pellentesque et ex iaculis, dapibus lorem non, dignissim dolor.",
-      "Sed quis commodo sapien, et pretium justo. Nullam a arcu lorem. Vestibulum mauris leo, vehicula id ex eu, tristique ultrices leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin scelerisque rhoncus tellus a euismod. Proin leo diam, faucibus in erat ac, pretium laoreet nunc. Nulla ultrices auctor orci ac mattis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vitae nibh lectus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus faucibus, tortor quis efficitur luctus, libero orci ornare nunc, eu mattis nisl libero non sapien. Nunc scelerisque ullamcorper dignissim.",
-      "Quisque sit amet pretium urna, bibendum malesuada eros. Pellentesque tincidunt velit non justo varius, vitae sodales libero egestas. Duis in sodales lacus. Aliquam rutrum, nibh quis molestie volutpat, ligula nibh tincidunt ligula, et vulputate eros sem vel ipsum. Fusce tristique, nibh ac eleifend facilisis, velit ipsum aliquet velit, eu semper massa ligula vitae leo. Praesent ac molestie augue. Fusce eget porta justo. Vestibulum dictum viverra augue, ac lobortis mauris tristique at. Sed nisl eros, viverra eu orci vel, pharetra accumsan est. Donec id fringilla purus. Aenean euismod accumsan blandit. Maecenas laoreet nisi non libero congue, in gravida orci egestas. Integer sodales varius leo vehicula lobortis. Proin venenatis malesuada eros. Etiam porta mauris eu eros vestibulum accumsan quis et massa."
-    ]
+    "name": "Fatherless",
+    "handle": "Fatherless",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
   },
   {
     "id": 4,
-    "name": "x",
-    "handle": "@x",
-    "description": []
+    "name": "Talking Dolls",
+    "handle": "Talking Dolls",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 5,
+    "name": "Harpy House Press",
+    "handle": "Harpy House Press",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 6,
+    "name": "Connor Stechschulte",
+    "handle": "Connor Stechschulte",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 7,
+    "name": "Crush Entity",
+    "handle": "Crush Entity",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 8,
+    "name": "Michelle McCoy",
+    "handle": "Michelle McCoy",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 9,
+    "name": "bench press",
+    "handle": "bench press",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 10,
+    "name": "CHema Skandal!",
+    "handle": "CHema Skandal!",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "orchid"
+  },
+  {
+    "id": 11,
+    "name": "cool press name",
+    "handle": "cool press name",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "sunflower"
+  },
+  {
+    "id": 12,
+    "name": "TOMATO TOMATO TOMATO",
+    "handle": "TOMATO TOMATO TOMATO",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum",
+    "color": "sunflower"
+  },
+  {
+    "id": 13,
+    "name": "T-Bar Ranch",
+    "handle": "T-Bar Ranch",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "sunflower"
+  },
+  {
+    "id": 14,
+    "name": "Maggie Umber",
+    "handle": "Maggie Umber",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "sunflower"
+  },
+  {
+    "id": 15,
+    "name": "Bandalero Press",
+    "handle": "Bandalero Press",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "aqua"
+  },
+  {
+    "id": 16,
+    "name": "Joe Tallman Illustration",
+    "handle": "Joe Tallman Illustration",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "aqua"
+  },
+  {
+    "id": 17,
+    "name": "is Press",
+    "handle": "is Press",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "aqua"
+  },
+  {
+    "id": 18,
+    "name": "Julia Schrecengost",
+    "handle": "Julia Schrecengost",
+    "handleHref": "https://example.org",
+    "description": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum",
+    "color": "aqua"
   }
 ]

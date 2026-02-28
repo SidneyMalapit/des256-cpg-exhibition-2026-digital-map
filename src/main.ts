@@ -23,21 +23,32 @@ for (const id in positions as [number, number][]) {
   clickMap.append(button);
 
   if (!vendors) { continue; }
+
   const items = ['name', 'handle', 'description'];
   const infoBox = infoTemplate.content.cloneNode(true) as DocumentFragment;
+  const vendor = vendors.find((v) => v.id === +id + 1);
+
+  if (!vendor) { continue; }
+
+  infoBox.children[0].classList.add(vendor.color);
 
   for (const item of items) {
     const element = infoBox.querySelector(`.vendor-${item}`);
-    const vendor = vendors.find((v) => v.id === +id + 1);
+
     if (!element || !vendor) { continue; }
+
     if (item === 'handle' && typeof vendor.handleHref === 'string') {
       const anchor = document.createElement('a');
+
       anchor.href = vendor.handleHref;
       anchor.textContent = (vendor as any)[item];
+
       element.innerHTML = '';
       element.append(anchor);
+
       continue;
     }
+
     element.textContent = (vendor as any)[item];
   }
 
