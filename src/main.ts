@@ -1,3 +1,5 @@
+import './assets/styles/style.css'
+
 import positions from '../data/positions.json';
 import vendors from '../data/vendors.json';
 

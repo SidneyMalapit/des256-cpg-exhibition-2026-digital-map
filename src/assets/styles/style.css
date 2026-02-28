@@ -1,21 +1,21 @@
 @font-face {
   font-family: "FuturaStd-Book";
-  src: url("/src/asset/otf/FuturaStd-Book.otf");
+  src: url("/src/assets/otf/FuturaStd-Book.otf");
 }
 
 @font-face {
   font-family: "FuturaStd-Medium";
-  src: url("/src/asset/otf/FuturaStd-Medium.otf");
+  src: url("/src/assets/otf/FuturaStd-Medium.otf");
 }
 
 @font-face {
   font-family: "FuturaStd-ExtraBold";
-  src: url("/src/asset/otf/FuturaStd-ExtraBold.otf");
+  src: url("/src/assets/otf/FuturaStd-ExtraBold.otf");
 }
 
 @font-face {
   font-family: "CPGCooper";
-  src: url("/src/asset/otf/CooperBlackItalicSwashCustom.otf");
+  src: url("/src/assets/otf/CooperBlackItalicSwashCustom.otf");
 }
 
 :root {
@@ -25,6 +25,7 @@
   --charcoal: #72747c;
 
   --trans-duration: 100ms;
+  --font: "FuturaStd-Book", "Futura Std", "Futura", "Helvetica", "Arial", "Segoe UI", sans-serif;
 }
 
 @media (orientation: portrait) {
@@ -34,7 +35,7 @@
 }
 
 body {
-  font-family: "FuturaStd-Book", "Futura Std", "Futura", "Helvetica", "Arial", "Segoe UI", sans-serif;
+  font-family: var(--font);
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -59,13 +60,13 @@ header.main-layout {
 
 #map-container {
   flex: 1;
-  overflow-x: scroll;
-  overflow-y: visible;
 
   & #click-map {
     position: relative;
     width: min-content;
     height: min-content;
+    overflow-x: scroll;
+    overflow-y: visible;
   }
 
   & button.interactive {
@@ -89,6 +90,7 @@ article.info-box {
   --left: 2rem;
   --bottom: 2.5rem;
 
+  font-family: var(--font);
   background-color: var(--sunflower);
   text-align: left;
   padding: 1rem;
