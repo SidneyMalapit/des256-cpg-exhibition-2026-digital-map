@@ -80,6 +80,20 @@ header.main-layout {
     border-radius: 100%;
     width: var(--radius);
     height: var(--radius);
+    counter-increment: count 1;
+
+    /* debug counters */
+    /*
+    &::before {
+      position: absolute;
+      font-weight: bold;
+      font-size: 1rem;
+      left: 0.25rem;
+      bottom: 1.25rem;
+      color: black;
+      content: counter(count, decimal);
+    }
+    */
   }
 }
 
@@ -114,7 +128,9 @@ article.info-box {
   .vendor-name, .vendor-handle { white-space: nowrap; }
 
   .vendor-description {
+    max-width: 66ch;
     max-height: 12rem;
+    overflow-wrap: break-word;
     overflow-y: scroll;
   }
 }
