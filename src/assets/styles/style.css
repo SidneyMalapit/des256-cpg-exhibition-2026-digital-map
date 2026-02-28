@@ -75,6 +75,7 @@ header.main-layout {
     position: absolute;
     transform: translate(-50%, -50%);
     background-color: #0000;
+    /* border: 2px solid gray; */
     border: none;
     border-radius: 100%;
     width: var(--radius);
