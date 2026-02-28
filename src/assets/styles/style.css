@@ -83,7 +83,7 @@ header.main-layout {
     counter-increment: count 1;
 
     /* debug counters */
-    /**/
+    /*
     &::before {
       position: absolute;
       font-weight: bold;
@@ -93,7 +93,7 @@ header.main-layout {
       color: black;
       content: counter(count, decimal);
     }
-    /**/
+    */
   }
 }
 
