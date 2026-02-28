@@ -111,8 +111,14 @@ article.info-box {
   .vendor-handle { opacity: 0.5; }
 
   .vendor-name, .vendor-handle { white-space: nowrap; }
+
+  .vendor-description {
+    max-height: 12rem;
+    overflow-y: scroll;
+  }
 }
 
+/* popup comic book type triangle, may need to have it for all 4 corners? */
 .triangle {
   position: absolute;
   bottom: calc(var(--bottom) - 4rem);
