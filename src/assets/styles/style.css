@@ -105,6 +105,7 @@ article.info-box {
   --left: 2rem;
   --bottom: 2.5rem;
 
+  color: inherit;
   font-family: var(--font);
   text-align: left;
   padding: 1rem;
@@ -137,6 +138,7 @@ article.info-box {
 /* popup comic book type triangle, may need to have it for all 4 corners? */
 .triangle {
   position: absolute;
+  background-color: inherit;
   bottom: calc(var(--bottom) - 4rem);
   left: calc(var(--left) - 3rem);
   width: 2rem;
