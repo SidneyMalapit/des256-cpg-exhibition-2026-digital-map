@@ -129,6 +129,7 @@ article.info-box {
   .vendor-name, .vendor-handle { white-space: nowrap; }
 
   .vendor-description {
+    min-width: 30ch;
     max-width: 66ch;
     max-height: 12rem;
     overflow-wrap: break-word;
