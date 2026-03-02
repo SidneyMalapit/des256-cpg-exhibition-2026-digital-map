@@ -65,7 +65,7 @@ header.main-layout {
 
 #map-container {
   flex: 1;
-  overflow: scroll;
+  overflow-x: scroll;
   padding: 4rem 0;
 
   & #click-map {
